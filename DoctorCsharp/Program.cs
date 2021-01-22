@@ -28,8 +28,9 @@ namespace DoctorCsharp
         {
             string sentence;
             //Give greeting at start
-            Console.WriteLine("Good morning, I hope you are well today.");
-            Console.WriteLine("What can I do for you ? ");
+            Doctor doctor = new Doctor();
+
+            Console.WriteLine(doctor.Greeting());
             while(true)
             {
                 //Prompt user for input
@@ -39,12 +40,12 @@ namespace DoctorCsharp
                 //Check to see if user wants to stop
                 if(sentence.ToUpper().Equals("QUIT"))
                 {
-                    Console.WriteLine("Have a nice day!");
+                    Console.WriteLine(doctor.Farewell());
                     break;
                 }
 
                 //Reply using the words the user typed
-                Console.WriteLine(Reply(sentence));
+                Console.WriteLine(doctor.Reply(sentence));
             }
 
         }
